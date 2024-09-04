@@ -70,7 +70,7 @@ for feature in ['town', 'flat_type', 'storey_range']:
 col1, col2 = st.columns([1, 4])  # Adjust the width ratio as needed
 
 with col1:
-    st.image("C:/Users/Justin/Desktop/Data Sprint/streamlitdemo/wow.png", width=100)  # Adjust width as necessary
+    st.image("wow.png", width=100)  # Adjust width as necessary
 
 with col2:
     st.header("🏠 HDB Resale Price Predictor")
