@@ -59,9 +59,21 @@ model = models['lightgbm']
 model_feature_names = model.feature_name()
 
 # Streamlit App
-st.title("""🏠HDB Resale Price Predictor
+col1, col2 = st.columns([1, 4])  # Adjust the width ratio as needed
+
+with col1:
+    # Add the image in the first column and shrink it
+    st.image("wow.png", width=100)  # Adjust width as necessary
+
+with col2:
+    # Add the header in the second column with a multi-line string
+    st.header("🏠 HDB Resale Price Predictor")
+
+# Now, add the text underneath both columns
+st.write("""
 This HDB Resale Price Predictor is created by DJ BAB! 🧑🏽‍💻 
-Using of catboost regression predictive model of history data from 2012-2021""")
+using a LightGBM regression predictive model of history data from 2012-2021 fo the predicted resale prices.
+""")
 
 # User input for features
 town = st.sidebar.selectbox('Select Town:', final_combined_data['town'].unique())
