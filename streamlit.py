@@ -20,7 +20,7 @@ model_paths = {
 
 # Define CSV path
 csv_path = {
-    "final_variable": "C:/Users/Justin/Desktop/Data Sprint/streamlitdemo/train_ce.csv"
+    "final_variable": "uservariableinput.csv"
 }
 
 # Load LightGBM model
