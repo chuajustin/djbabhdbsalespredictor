@@ -15,7 +15,7 @@ Select options from the dropdown menus to display the predictions and data.
 
 # Define model paths
 model_paths = {
-    "lightgbm": "C:/Users/Justin/Desktop/Data Sprint/streamlitdemo/lightgbm_model.txt"
+    "lightgbm": "lightgbm_model.txt"
 }
 
 # Define CSV path
