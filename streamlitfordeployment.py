@@ -16,12 +16,12 @@ Select options from the dropdown menus to display the predictions and data.
 
 # Define model paths
 model_paths = {
-    "lightgbm": "C:/Users/Justin/Desktop/Data Sprint/streamlitdemo/lightgbm_model.txt"
+    "lightgbm": "lightgbm_model.txt"
 }
 
 # Define CSV path
 csv_path = {
-    "final_variable": "C:/Users/Justin/Desktop/Data Sprint/streamlitdemo/train_ce.csv"
+    "final_variable": "userinputvariable.csv"
 }
 
 # Load LightGBM model
