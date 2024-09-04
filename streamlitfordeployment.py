@@ -123,7 +123,7 @@ if st.sidebar.button('Predict Resale Price'):
             'Town': [town],
             'Flat Type': [flat_type],
             'Lease Commencement Date': [str(lease_commence_date)],
-            'Storey Range': [storey_range],
+            'Storey Range': [max_story_lvl],
             'Floor Area (SQ FT)': [floor_area],
             'Resale Price': [f"${prediction_result:.2f}"],
         })
