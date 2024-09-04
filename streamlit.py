@@ -20,7 +20,7 @@ model_paths = {
 
 # Define CSV path
 csv_path = {
-    "final_variable": "userinput.csv"
+    "final_variable": "userinputvariable.csv"
 }
 
 # Load LightGBM model
