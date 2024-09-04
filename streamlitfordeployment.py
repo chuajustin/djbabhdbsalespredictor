@@ -77,7 +77,7 @@ with col2:
 
 st.write("""
 This HDB Resale Price Predictor is created by DJ BAB! 🧑🏽‍💻 
-Using a CatBoost regression predictive model of history data from 2012-2021
+Using a LightGBM regression predictive model of history data from 2012-2021
 """)
 
 # User input for features
