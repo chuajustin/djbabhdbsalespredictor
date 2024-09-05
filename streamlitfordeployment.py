@@ -3,7 +3,6 @@ import pandas as pd
 import lightgbm as lgb
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
-from datetime import datetime
 
 # Initialize or load the DataFrame for storing results with custom column names
 if 'results_df' not in st.session_state:
@@ -89,9 +88,8 @@ storey_range = st.sidebar.selectbox('Select Storey Range:', final_combined_data[
 floor_area = st.sidebar.slider('Select Floor Area (Sq Ft):', min_value=int(final_combined_data['floor_area_sqft'].min()), 
                                max_value=int(final_combined_data['floor_area_sqft'].max()), value=int(final_combined_data['floor_area_sqft'].mean()))
 
-# Calculate hdb_age
-current_year = datetime.now().year
-hdb_age = current_year - lease_commence_date
+# Retrieve hdb_age corresponding to the selected lease_commence_date
+hdb_age = final_combined_data.loc[final_combined_data['lease_commence_date'] == lease_commence_date, 'hdb_age'].values[0]
 
 # Convert storey_range to max_floor_lvl for prediction purposes
 max_floor_lvl = final_combined_data.loc[final_combined_data['storey_range'] == storey_range, 'max_floor_lvl'].values[0]
@@ -100,7 +98,7 @@ max_floor_lvl = final_combined_data.loc[final_combined_data['storey_range'] == s
 input_data = pd.DataFrame({
     'town': [town],
     'flat_type': [flat_type],
-    'hdb_age': [hdb_age],  # Replace lease_commence_date with hdb_age
+    'hdb_age': [hdb_age],  # Use hdb_age instead of lease_commence_date
     'max_floor_lvl': [max_floor_lvl],  # Use max_floor_lvl instead of storey_range
     'floor_area_sqft': [floor_area],
 })
