@@ -61,7 +61,7 @@ model_feature_names = model.feature_name()
 
 # Create LabelEncoders based on the final_combined_data
 label_encoders = {}
-for feature in ['town', 'flat_type', 'storey_range']:
+for feature in ['town', 'flat_type', 'max_floor_lvl']:
     le = LabelEncoder()
     le.fit(final_combined_data[feature])
     label_encoders[feature] = le
@@ -84,25 +84,27 @@ Using a LightGBM regression predictive model of history data from 2012-2021
 town = st.sidebar.selectbox('Select Town:', final_combined_data['town'].unique())
 flat_type = st.sidebar.selectbox('Select Flat Type:', final_combined_data['flat_type'].unique())
 lease_commence_date = st.sidebar.selectbox('Select Lease Commencement Date:', final_combined_data['lease_commence_date'].unique())
-storey_range = st.sidebar.selectbox('Select Storey Range:', final_combined_data['storey_range'].unique())
+storey_range = st.sidebar.selectbox('Select Storey Range:', final_combined_data['storey_range'].unique())  # Keep this for user input
 floor_area = st.sidebar.slider('Select Floor Area (Sq Ft):', min_value=int(final_combined_data['floor_area_sqft'].min()), 
                                max_value=int(final_combined_data['floor_area_sqft'].max()), value=int(final_combined_data['floor_area_sqft'].mean()))
+
+# Convert storey_range to max_floor_lvl for prediction purposes
+max_floor_lvl = final_combined_data.loc[final_combined_data['storey_range'] == storey_range, 'max_floor_lvl'].values[0]
 
 # Create a DataFrame from user input
 input_data = pd.DataFrame({
     'town': [town],
     'flat_type': [flat_type],
     'lease_commence_date': [lease_commence_date],
-    'storey_range': [storey_range],
+    'max_floor_lvl': [max_floor_lvl],  # Use max_floor_lvl instead of storey_range
     'floor_area_sqft': [floor_area],
-     
 })
 
 # Encode the 'town' variable for prediction
 input_data['town_Encoded'] = label_encoders['town'].transform(input_data['town'])
 input_data['flat_type_Encoded'] = label_encoders['flat_type'].transform(input_data['flat_type'])
 # Transform other features
-input_data['storey_range'] = label_encoders['storey_range'].transform(input_data['storey_range'])
+input_data['max_floor_lvl'] = label_encoders['max_floor_lvl'].transform(input_data['max_floor_lvl'])
 
 # Ensure column order and consistency
 input_data = input_data.reindex(columns=model_feature_names, fill_value=0)
@@ -123,7 +125,7 @@ if st.sidebar.button('Predict Resale Price'):
             'Town': [town],
             'Flat Type': [flat_type],
             'Lease Commencement Date': [str(lease_commence_date)],
-            'Storey Range': [storey_range],
+            'Storey Range': [storey_range],  # Display storey_range for the user
             'Floor Area (SQ FT)': [floor_area],
             'Resale Price': [f"${prediction_result:.2f}"],
         })
