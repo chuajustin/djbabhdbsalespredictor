@@ -127,7 +127,7 @@ if st.sidebar.button('Predict Resale Price'):
             'Lease Commencement Date': [str(lease_commence_date)],
             'Storey Range': [storey_range],  # Display storey_range for the user
             'Floor Area (SQ FT)': [floor_area],
-            'Resale Price': [f"${prediction_result:.,2f}"],
+            'Resale Price': [f"${prediction_result:,.2f}"],
         })
 
         # Add the new row to the results DataFrame
@@ -135,7 +135,7 @@ if st.sidebar.button('Predict Resale Price'):
         
         # Display all results DataFrame
         st.subheader('All Predictions Results')
-        st.markdown(f"<h2>Resale Price: ${prediction_result:.2f}</h2>", unsafe_allow_html=True)  # Larger text
+        st.markdown(f"<h2>Resale Price: ${prediction_result:,.2f}</h2>", unsafe_allow_html=True)  # Larger text
         st.dataframe(st.session_state.results_df)
     
     except Exception as e:
