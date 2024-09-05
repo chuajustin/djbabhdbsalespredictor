@@ -21,7 +21,7 @@ model_paths = {
 
 # Define CSV path
 csv_path = {
-    "final_variable": "userinputvariable.csv"
+    "user_input": "userinputvariable.csv"
 }
 
 # Load LightGBM model
@@ -53,7 +53,7 @@ def load_data(csv_path):
 
 # Load models and historical data
 models = load_models(model_paths)
-final_combined_data = load_data(csv_path["final_variable"])
+final_combined_data = load_data(csv_path["user_input"])
 
 # Get feature names from the model
 model = models['lightgbm']
