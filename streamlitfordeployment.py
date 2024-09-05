@@ -127,7 +127,7 @@ if st.sidebar.button('Predict Resale Price'):
             'Lease Commencement Date': [str(lease_commence_date)],
             'Storey Range': [storey_range],  # Display storey_range for the user
             'Floor Area (SQ FT)': [floor_area],
-            'Resale Price': [f"${prediction_result:.2f}"],
+            'Resale Price': [f"${prediction_result:.,2f}"],
         })
 
         # Add the new row to the results DataFrame
