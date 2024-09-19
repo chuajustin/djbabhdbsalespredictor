@@ -1,5 +1,5 @@
 <h1>HDB Resale Price Predictor 🏡 </h1>
-<h2>By DJBAB</h2>
+<h2>By Den, Justin, Barry and Alice</h2>
 
 # Introduction
 
