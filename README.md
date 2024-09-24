@@ -20,4 +20,19 @@ The predictor uses the input variable to determine the HDB resale pricing. Our a
 4. Storey range
 5. Floor Area (Sq Ft)
 
+## Step by Step Guide
+
+### Step 1
+You will first arrive on this page when you click on the link above (awake the app if it mentioned that it is idle due to inactive)
+
+
+### Step 2
+Select the choices in the dropdown boxes (as indicated by arrows)
+
+
+### Step 3
+Click "Predict Resale Price" (as indicated by arrow) and result will be as shown below.
+
+### Step 4
+You may download the result as CSV file for your use!
 
