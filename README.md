@@ -24,15 +24,20 @@ The predictor uses the input variable to determine the HDB resale pricing. Our a
 
 ### Step 1
 You will first arrive on this page when you click on the link above (awake the app if it mentioned that it is idle due to inactive)
-
+![Step 1](https://github.com/user-attachments/assets/65a7c4d2-f87e-4858-a3e5-9c2a3f8fb4a9)
 
 ### Step 2
-Select the choices in the dropdown boxes (as indicated by arrows)
+Select the choices in the dropdown boxes (as indicated by arrows)  
+![Step 2](https://github.com/user-attachments/assets/6d433888-b6f0-4934-9b39-97e29ad4c1ab)
 
 
 ### Step 3
-Click "Predict Resale Price" (as indicated by arrow) and result will be as shown below.
+Click "Predict Resale Price" (as indicated by arrow) and result will be as shown below.  
+![Step 3](https://github.com/user-attachments/assets/1312a555-c5ef-4d98-8d67-93dd932e5267)
+![Step 4](https://github.com/user-attachments/assets/4b5242fb-87fc-4376-88d5-eb79ade6e9c7)
+
 
 ### Step 4
-You may download the result as CSV file for your use!
+You may download the result as CSV file for your use!  
+![Step 5](https://github.com/user-attachments/assets/4445ce12-e54d-4347-a04b-0ece4ac53a35)
 
